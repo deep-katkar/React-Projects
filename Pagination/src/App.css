@@ -40,3 +40,49 @@
 .read-the-docs {
   color: #888;
 }
+
+table,
+td,
+th {
+  border: 2px solid;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 1.5rem;
+}
+
+/* table {
+  border-spacing: 15px;
+} */
+
+caption {
+  border: 2px solid;
+  padding: 0.7rem;
+}
+
+.pagination {
+  padding: 1-px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination > span {
+  padding: 15px 20px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.pagination__disable {
+  opacity: 0;
+}
+
+.pagination__selected {
+  background-color: #686666;
+}
+
+.table-container {
+  width: 700px;
+}
