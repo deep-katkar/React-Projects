@@ -2,9 +2,15 @@ import { Box, HStack, Heading, Icon, Stack, Text } from "@chakra-ui/react";
 import { RxDashboard } from "react-icons/rx";
 import { BsArrowDownUp } from "react-icons/bs";
 import { BiSupport } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidenav = () => {
+  const location = useLocation();
+
+  const isActive = (link) => {
+    return location.pathname === link;
+  };
+
   const navLinks = [
     {
       icon: RxDashboard,
@@ -40,11 +46,12 @@ const Sidenav = () => {
                 borderRadius="10px"
                 py="12px"
                 px="16px"
+                bg={isActive(item.link) ? "#F3F3F7" : "transparent"}
+                color={isActive(item.link) ? "#171717" : "#797E82"}
                 _hover={{
                   bg: "#F3F3F7",
                   color: "#171717",
                 }}
-                color="#797E82"
               >
                 {" "}
                 // we can also use multiple of 4 as px like mx='3' 4*3 = 12
@@ -64,11 +71,12 @@ const Sidenav = () => {
             borderRadius="10px"
             py="12px"
             px="16px"
+            bg={isActive("/support") ? "#F3F3F7" : "transparent"}
+            color={isActive("/support") ? "#171717" : "#797E82"}
             _hover={{
               bg: "#F3F3F7",
               color: "#171717",
             }}
-            color="#797E82"
           >
             <Icon as={BiSupport} />
             <Text fontSize="18px" fontWeight="medium">
